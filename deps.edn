@@ -1,0 +1,15 @@
+{:aliases
+   {:neil {:project {:name testLibPy/testLibPy}}
+    :nrepl
+      {:extra-deps {cider/cider-nrepl {:mvn/version "0.44.0"}
+                    nrepl/nrepl {:mvn/version "1.1.0"}
+                    refactor-nrepl/refactor-nrepl {:mvn/version "3.9.1"}}
+       :main-opts
+         ["-m" "nrepl.cmdline" "--interactive" "--color" "--middleware"
+          "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"
+          "-p" "12345"]}}
+ :deps {clj-python/libpython-clj {:mvn/version "2.025"}
+        org.clojure/clojure {:mvn/version "1.11.1"}
+        io.github.nextjournal/clerk {:mvn/version "0.15.957"}}
+
+ :paths ["src"]}
